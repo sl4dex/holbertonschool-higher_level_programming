@@ -1,1 +1,2 @@
+#!/bin/bash
 python3 -c 'print("Best School: {}".format(88+10))'
