@@ -1,0 +1,33 @@
+importing module
+>>> add_integer = __import__('0-add_integer').add_integer
+
+Test 1
+>>> add_integer(1, 1)
+2
+
+Test 2
+>>> add_integer("go", 0.3)
+Traceback (most recent call last):
+    . . .
+TypeError: a must be an integer
+
+Test 3
+>>> add_integer(0.5, "hi")
+Traceback (most recent call last):
+    . . .
+TypeError: b must be an integer
+
+Test 4
+>>> add_integer(1,)
+99
+
+Test 5
+>>> add_integer("h", "o")
+Traceback (most recent call last):
+    . . .
+TypeError: a must be an integer
+
+Test 6
+>>> add_integer(2.22, 3.33)
+5
+
