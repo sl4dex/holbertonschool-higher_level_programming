@@ -1,0 +1,20 @@
+Importing module
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Test 1
+>>> text_indentation("""Lor:em ipsum. dolor sit amet,? consec a deer t""")
+Lor:
+<BLANKLINE>
+em ipsum.
+<BLANKLINE>
+dolor sit amet,?
+<BLANKLINE>
+consec a deer t
+
+Test 2
+>>> text_indentation("""I have.   more spaces""")
+I have.
+<BLANKLINE>
+more spaces
+
+text_indentation("""I have.   more spaces   """)
