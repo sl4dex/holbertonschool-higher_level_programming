@@ -12,9 +12,28 @@ dolor sit amet,?
 consec a deer t
 
 Test 2
->>> text_indentation("""I have.   more spaces""")
+>>> text_indentation("""I have.   more spaces: here     """)
 I have.
 <BLANKLINE>
-more spaces
+more spaces:
+<BLANKLINE>
+here
 
-text_indentation("""I have.   more spaces   """)
+Test 3
+>>> text_indentation("      no text at.  start.")
+no text at.
+<BLANKLINE>
+start.
+<BLANKLINE>
+
+Test 4
+>>> text_indentation(4)
+Traceback (most recent call last):
+    . . .
+TypeError: text must be a string
+
+Test 5
+>>> text_indentation()
+Traceback (most recent call last):
+    . . .
+TypeError: text_indentation() missing 1 required positional argument: 'text'
