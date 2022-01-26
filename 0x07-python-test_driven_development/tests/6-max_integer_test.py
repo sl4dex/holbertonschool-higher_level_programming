@@ -10,6 +10,9 @@ class TestMaxInteger(unittest.TestCase):
     def test_types(self):
         """ check if data types are correctly handled """
         self.assertEqual(max_integer([1, 2, 3]), 3)
+        self.assertEqual(max_integer([4, 2, 3]), 4)
+        self.assertEqual(max_integer([4, 7, 3]), 7)
+        self.assertEqual(max_integer([-4, -7, -3]), -3)
         self.assertEqual(max_integer([-1, -80, 0]), 0)
         self.assertEqual(max_integer([4, 4, 4]), 4)
         self.assertEqual(max_integer([1, 2, 3, 4.5]), 4.5)
