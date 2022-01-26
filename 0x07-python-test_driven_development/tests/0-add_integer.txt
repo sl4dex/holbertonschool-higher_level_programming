@@ -31,3 +31,22 @@ Test 6
 >>> add_integer(2.22, 3.33)
 5
 
+Test 7
+>>> add_integer(True, 2)
+Traceback (most recent call last):
+    . . .
+TypeError: a must be an integer
+
+Test 8
+>>> add_integer(1, False)
+Traceback (most recent call last):
+    . . .
+TypeError: b must be an integer
+
+Test 9 float overflow
+>>> add_integer(1, float('inf'))
+89
+
+Test 9 NaN value
+>>> add_integer(1, float('nan'))
+90
