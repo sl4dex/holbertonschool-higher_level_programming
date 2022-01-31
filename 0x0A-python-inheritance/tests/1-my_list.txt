@@ -1,0 +1,21 @@
+Importing module
+>>> MyList = __import__('1-my_list').MyList
+>>> mylist = MyList([1, 4, 2, 3, 5])
+
+Test 1
+>>> mylist
+[1, 4, 2, 3, 5]
+
+Test 2
+>>> mylist.print_sorted()
+[1, 2, 3, 4, 5]
+
+Test 3
+>>> mylist = MyList([8, 7, 2])
+>>> mylist.print_sorted()
+[2, 7, 8]
+
+Test 4
+>>> mylist = MyList([])
+>>> mylist.print_sorted()
+[]
