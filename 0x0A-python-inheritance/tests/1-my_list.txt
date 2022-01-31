@@ -12,10 +12,34 @@ Test 2
 
 Test 3
 >>> mylist = MyList([8, 7, 2])
+>>> mylist
+[8, 7, 2]
 >>> mylist.print_sorted()
 [2, 7, 8]
 
 Test 4
 >>> mylist = MyList([])
+>>> mylist
+[]
 >>> mylist.print_sorted()
 []
+
+Test 4
+>>> mylist = MyList(98)
+Traceback (most recent call last):
+    . . .
+TypeError: 'int' object is not iterable
+
+Test 5
+>>> mylist = MyList([4, 4, 4])
+>>> mylist
+[4, 4, 4]
+>>> mylist.print_sorted()
+[4, 4, 4]
+
+Test 6
+>>> mylist = MyList([-8, -7, -2])
+>>> mylist
+[-8, -7, -2]
+>>> mylist.print_sorted()
+[-8, -7, -2]
