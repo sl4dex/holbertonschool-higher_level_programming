@@ -43,3 +43,14 @@ Test 6
 [-8, -7, -2]
 >>> mylist.print_sorted()
 [-8, -7, -2]
+
+Test 7
+>>> mylist = MyList([-8, "a", -2])
+>>> mylist
+Traceback (most recent call last):
+    . . .
+TypeError: 'int' object is not iterable
+>>> mylist.print_sorted()
+Traceback (most recent call last):
+    . . .
+TypeError: 'int' object is not iterable
