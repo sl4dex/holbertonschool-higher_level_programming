@@ -47,10 +47,8 @@ Test 6
 Test 7
 >>> mylist = MyList([-8, "a", -2])
 >>> mylist
-Traceback (most recent call last):
-    . . .
-TypeError: 'int' object is not iterable
+[-8, 'a', -2]
 >>> mylist.print_sorted()
 Traceback (most recent call last):
     . . .
-TypeError: 'int' object is not iterable
+TypeError: '<' not supported between instances of 'str' and 'int'
