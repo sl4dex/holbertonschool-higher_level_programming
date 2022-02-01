@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Add args to JSON file Module """
 from sys import argv
+import json
 
 
 save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
