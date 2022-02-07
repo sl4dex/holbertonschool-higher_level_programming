@@ -22,6 +22,7 @@ class Base:
             with open(cls.__name__ + ".json",
                       encoding='utf-8', mode='w') as f:
                 f.write(cls.to_json_string(lst))
+                return
         for obj in list_objs:
             lst.append(cls.to_dictionary(obj))
             with open(cls.__name__ + ".json",
