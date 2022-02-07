@@ -88,6 +88,14 @@ class Rectangle(Base):
                 if k in lst:
                     setattr(self, k, v)
 
+    def to_dictionary(self):
+        lst = ["id", "width", "height", "x", "y"]
+        dct = {}
+        for attr in lst:
+          if hasattr(self, attr):
+              dct.update({attr: getattr(self, attr)})
+        return dct
+
     def __init__(self, width, height, x=0, y=0, id=None):
         self.width = width
         self.height = height
