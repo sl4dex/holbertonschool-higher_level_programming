@@ -17,6 +17,7 @@ class Square(Rectangle):
         super(Square, type(self)).height.fset(self, size)
 
     def update(self, *args, **kwargs):
+        """ updates Square object attributes """
         lst = ["id", "size", "x", "y"]
         if args:
             for idx in range(len(args)):
@@ -24,6 +25,15 @@ class Square(Rectangle):
         else:
             for k, v in kwargs.items():
                 setattr(self, k, v)
+
+    def to_dictionary(self):
+        """ returns dictionary representation of Square attributes """
+        lst = ["id", "size", "x", "y"]
+        dct = {}
+        for attr in lst:
+          if hasattr(self, attr):
+              dct.update({attr: getattr(self, attr)})
+        return dct
 
     def __init__(self, size, x=0, y=0, id=None):
         super().__init__(size, size, x, y, id)
