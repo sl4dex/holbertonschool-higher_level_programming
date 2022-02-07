@@ -21,12 +21,12 @@ class Base:
         if list_objs is None:
             with open(cls.__name__ + ".json",
                       encoding='utf-8', mode='w') as f:
-                f.write(Base.to_json_string(lst))
+                f.write(cls.to_json_string(lst))
         for obj in list_objs:
             lst.append(cls.to_dictionary(obj))
             with open(cls.__name__ + ".json",
                       encoding='utf-8', mode='w') as f:
-                f.write(Base.to_json_string(lst))
+                f.write(cls.to_json_string(lst))
 
     @staticmethod
     def from_json_string(json_string):
