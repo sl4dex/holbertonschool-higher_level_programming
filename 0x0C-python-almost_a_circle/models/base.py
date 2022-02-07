@@ -39,7 +39,8 @@ class Base:
     def create(cls, **dictionary):
         """ returns an instance with all attributes already set """
         instance = cls(1, 1)
-        instance.update(**dictionary)
+        if instance:
+            instance.update(**dictionary)
         return instance
 
     @classmethod
