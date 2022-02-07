@@ -31,12 +31,13 @@ class Square(Rectangle):
         lst = ["id", "size", "x", "y"]
         dct = {}
         for attr in lst:
-          if hasattr(self, attr):
-              dct.update({attr: getattr(self, attr)})
+            if hasattr(self, attr):
+                dct.update({attr: getattr(self, attr)})
         return dct
 
     def __init__(self, size, x=0, y=0, id=None):
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
-        return f"[Square] ({self.id}) {super().x}/{super().y} - {super().width}"
+        return f"[Square] ({self.id}) {super().x}/{super().y} " \
+               f"- {super().width}"
