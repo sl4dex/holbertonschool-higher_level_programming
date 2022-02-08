@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Base module """
 import json
+import csv
 
 
 class Base:
@@ -58,6 +59,23 @@ class Base:
         for dct in deserialized:
             lst.append(cls.create(**dct))
         return lst
+
+    def save_to_file_csv(cls, list_objs):
+        """ writes CVS representation of list_objs to a file """
+        with open(cls.__name__ + '.csv', encoding='utf-8', mode='w') as f:
+            writer = csv.writer(f)
+            for obj in list_objs:
+                if cls.__name__ == "Rectangle":
+                    writer.writerow([obj.id,
+                                    obj.width, obj.height, obj.x, obj.y])
+                elif cls.__name__ == "Square":
+                    writer.writerow([obj.id, obj.size, obj.x, obj.y])
+
+    def load_from_file_csv(cls):
+        """ returns a list of instances """
+        with open(cls.__name__ + '.csv', encoding='utf-8') as f:
+            reader = csv.reader(f)
+            return reader
 
     def __init__(self, id=None):
         if id is not None and type(id) is not int:
