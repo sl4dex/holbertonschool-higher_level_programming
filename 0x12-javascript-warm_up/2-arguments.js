@@ -1,7 +1,9 @@
 #!/usr/bin/node
-const arr = process.argv.slice(2);
-if (!arr[0]) {
+const a = process.argv;
+if (!a[2]) {
   console.log('No argument');
-} else {
+} else if (a[2] && !a[3]) {
   console.log('Argument passed');
+} else if (a[2] && a[3]) {
+  console.log('Arguments passed');
 }
