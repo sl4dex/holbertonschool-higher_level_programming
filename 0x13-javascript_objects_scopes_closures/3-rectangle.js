@@ -6,7 +6,8 @@ class Rectangle {
       this.height = h;
     }
   }
-  print() {
+
+  print () {
     let h, w, row;
     for (h = this.height; h >= 1; h--) {
       for (w = this.width, row = ''; w >= 1; w--) {
