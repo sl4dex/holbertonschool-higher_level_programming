@@ -10,7 +10,7 @@ if __name__ == "__main__":
     engine = create_engine(
         f"mysql://{argv[1]}:{argv[2]}@localhost:3306/{argv[3]}")
     session = Session(bind=engine)
-    rows = session.query(State).join(City)
+    rows = session.query(State).join(City).order_by(State.id, City.id)
     for stat in rows:
         print(f"{stat.id}: {stat.name}")
         for cit in stat.cities:
