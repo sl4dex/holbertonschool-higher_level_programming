@@ -10,7 +10,6 @@ if __name__ == "__main__":
     engine = create_engine(
         f"mysql://{argv[1]}:{argv[2]}@localhost:3306/{argv[3]}")
     session = Session(bind=engine)
-    rows = session.query(State).join(City)
-    for stat in rows:
-        for cit in stat.cities:
-            print(f"{stat.name}: ({cit.id}) {cit.name}")
+    for stat, cit in session.query(State, City).filter(
+      State.id == City.state_id):
+        print(f"{stat.name}: ({cit.id}) {cit.name}")
