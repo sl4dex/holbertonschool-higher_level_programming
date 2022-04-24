@@ -5,16 +5,12 @@ from sys import argv
 
 
 if __name__ == "__main__":
-    #q = argv[1] if len(argv) > 1 else ""
-    if len(argv) > 1:
-        q = argv[1]
-    else:
-        q = ""
+    q = argv[1] if len(argv) > 1 else ""
     req = requests.post('http://0.0.0.0:5000/search_user', data={'q': q})
     try:
         s = str(req.json())
         d = req.json()
-    except JSONDecodeError:
+    except requests.exceptions.JSONDecodeError:
         print("Not a valid JSON")
     else:
         if s == "{}":
