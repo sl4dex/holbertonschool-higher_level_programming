@@ -9,6 +9,6 @@ with urllib.request.urlopen(req) as response:
 t = type(page)
 utf = page.decode("utf-8")
 print("Body response:\n\
-    - type: {}\n\
-    - content: {}\n\
-    - utf8 content: {}".format(t, page, utf))
+\t- type: {}\n\
+\t- content: {}\n\
+\t- utf8 content: {}".format(t, page, utf))
